@@ -11,8 +11,11 @@ namespace FizzBuzz
         static void Main(string[] args)
         {
             List<string> iList = new List<string>();
+            string output = string.Empty;
+            Console.WriteLine("Please Enter the Maximum Number");
+            int Max = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i < 201; i++)
+            for (int i = 1; i < Max+1; i++)
             {
                 iList.Clear();
 
@@ -64,7 +67,11 @@ namespace FizzBuzz
                 {
                     iList.Add(i.ToString());
                 }
-                string output = String.Join("", iList);
+                if (i % 17 == 0)
+                {
+                    iList.Reverse();
+                }
+                output = String.Join("", iList);
                 Console.WriteLine(output);
             }
             Console.ReadLine();
