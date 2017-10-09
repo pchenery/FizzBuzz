@@ -18,11 +18,23 @@ namespace FizzBuzz
                 }
                 else if (i % 3 == 0)
                 {
+                    if ( i % 7 == 0)
+                    {
+                        Console.WriteLine("FizzBang");
+                    }
                     Console.WriteLine("Fizz");
                 }
                 else if (i % 5 == 0)
                 {
+                    if (i % 7 == 0)
+                    {
+                        Console.WriteLine("BuzzBang");
+                    }
                     Console.WriteLine("Buzz");
+                }
+                else if (i % 7 == 0)
+                {
+                    Console.WriteLine("Bang");
                 }
                 else
                 {
