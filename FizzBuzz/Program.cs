@@ -10,36 +10,59 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i < 101; i++)
+            string PrintString = string.Empty;
+            for (int i = 1; i < 201; i++)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                PrintString = string.Empty;
+                if (i % 11 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    PrintString = "Bong";
+                    if (i % 13 == 0)
+                    {
+                        PrintString = "Fezz" + PrintString;
+                    }
                 }
                 else if (i % 3 == 0)
                 {
+                    PrintString = "Fizz";
+                    if (i % 13 == 0)
+                    {
+                        PrintString = PrintString + "Fezz";
+                    }
+                    if (i % 5 == 0)
+                    {
+                        PrintString = PrintString + "Buzz";
+                    }
                     if ( i % 7 == 0)
                     {
-                        Console.WriteLine("FizzBang");
+                        PrintString = PrintString + "Bang";
                     }
-                    Console.WriteLine("Fizz");
-                }
+                 }
                 else if (i % 5 == 0)
                 {
+                    PrintString = PrintString + "Buzz";
+                    if (i % 13 == 0)
+                    {
+                        PrintString = "Fezz" + PrintString;
+                    }
                     if (i % 7 == 0)
                     {
-                        Console.WriteLine("BuzzBang");
+                        PrintString = PrintString + "Bang";
                     }
-                    Console.WriteLine("Buzz");
                 }
                 else if (i % 7 == 0)
                 {
-                    Console.WriteLine("Bang");
+                    PrintString = "Bang";
+                    if (i % 13 == 0)
+                    {
+                        PrintString = "Fezz" + PrintString;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine(i);
+                    PrintString = i.ToString();
                 }
+                Console.WriteLine(PrintString);
             }
             Console.ReadLine();
         }
