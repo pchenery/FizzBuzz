@@ -10,59 +10,62 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            string PrintString = string.Empty;
+            List<string> iList = new List<string>();
+
             for (int i = 1; i < 201; i++)
             {
-                PrintString = string.Empty;
+                iList.Clear();
+
                 if (i % 11 == 0)
                 {
-                    PrintString = "Bong";
                     if (i % 13 == 0)
                     {
-                        PrintString = "Fezz" + PrintString;
+                        iList.Add("Fezz");
                     }
+                    iList.Add("Bong");
                 }
                 else if (i % 3 == 0)
                 {
-                    PrintString = "Fizz";
+                    iList.Add("Fizz");
                     if (i % 13 == 0)
                     {
-                        PrintString = PrintString + "Fezz";
+                        iList.Add("Fezz");
                     }
                     if (i % 5 == 0)
                     {
-                        PrintString = PrintString + "Buzz";
+                        iList.Add("Buzz");
                     }
                     if ( i % 7 == 0)
                     {
-                        PrintString = PrintString + "Bang";
+                        iList.Add("Bang");
                     }
                  }
                 else if (i % 5 == 0)
                 {
-                    PrintString = PrintString + "Buzz";
                     if (i % 13 == 0)
                     {
-                        PrintString = "Fezz" + PrintString;
+                        iList.Add("Fezz");
                     }
+                    iList.Add("Buzz");
                     if (i % 7 == 0)
                     {
-                        PrintString = PrintString + "Bang";
+                        iList.Add("Bang");
                     }
                 }
                 else if (i % 7 == 0)
                 {
-                    PrintString = "Bang";
                     if (i % 13 == 0)
                     {
-                        PrintString = "Fezz" + PrintString;
+                        iList.Add("Fezz");
                     }
+                    iList.Add("Bang");
                 }
                 else
                 {
-                    PrintString = i.ToString();
+                    iList.Add(i.ToString());
                 }
-                Console.WriteLine(PrintString);
+                string output = String.Join("", iList);
+                Console.WriteLine(output);
             }
             Console.ReadLine();
         }
